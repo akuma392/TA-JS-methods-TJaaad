@@ -108,17 +108,9 @@ console.log(changeArray([1, 2, 3, 4, 5, 6], addThree));
 */
 
 function sendMessage(message, funct) {
-  return function (funct) {
-    if (funct == console.log) {
-      return console.log(message);
-    } else if (funct == alert) {
-      return alert(message);
-    } else if (funct == prompt) {
-      return prompt(message);
-    }
-  };
+  return funct(message);
 }
-console.log(sendMessage("Hello", console));
+console.log(sendMessage("Hello", console.log));
 
 /*
 
