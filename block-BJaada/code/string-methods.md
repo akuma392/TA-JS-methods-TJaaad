@@ -44,6 +44,7 @@ Example:
   let str = 'a';
   dtr.toUppercase();//"A"
   ```
+- `toLowerCase` accepts the string and convert all character into upper case  
 
 3. `toLowerCase`
 
@@ -58,13 +59,14 @@ Example:
   let str = 'A';
   dtr.toLowercase();//"a"
   ```
+- `toUpperCase` accepts the string and convert all character into lower case  
 
 4. `trim`
 
 - Parameter:
   searchString: The characters to be searched for at the end of str.(string data type)
   length : it is used as the length of str. Defaults to str.length - Optional
-- Return: True or false if searchstring is
+- Return: new string representing the str stripped of whitespace from both end.
 - Example:
   ```Js
   let msg = "  hello  "
@@ -74,9 +76,9 @@ Example:
   let str = '  A';
   str.trim;//"A"
   ```
+- `trim` accept the string and will return the new string after removing white space from both end
 
-5. `trimEnd`
-
+5. `trimEnd` 
 - Parameter: accpets string -(string data type)
 - Return: new string representing the str stripped of whitespace from end.
 - Example:
@@ -88,7 +90,7 @@ Example:
   let str = 'A ';
   str.trimEnd();//"A"
   ```
-
+- `trimEnd` accept the string and will return the new string after removing white space from  end
 6. `trimStart`
 
 - Parameter: accpets string -(string data type)
@@ -102,7 +104,7 @@ Example:
   let str = ' A';
   str.trimStart();//"A"
   ```
-
+- `trimStart` accept the string and will return the new string after removing white space from  begining
 7. `concat`
 
 - Parameter: Strings to concatenate to str -(string data type)
@@ -116,7 +118,7 @@ Example:
   console.log(str2.concat(', ', str1));//'WOrld, Hello'
 
   ```
-
+- `concat` accepts multiple string and return conacated string as result  
 8. `endsWith`
 
 - Parameter:
@@ -132,6 +134,7 @@ Example:
   str1.endsWith('best',5);//false
 
   ```
+- `endsWith` take a searchstring as parameter and search in the string and result true if it is matched otherwise return false  
 
 9. `includes`
 
@@ -146,16 +149,160 @@ Example:
   universalFact.includes("in")//true
 
   ```
+- `uncludes` take a searchstring as parameter and search in the string and result true if it is matched otherwise return false  
 
 10. `indexOf`
+
+- Parameter:
+  searchValue: string will be searched in str and it will return the position. If it is not found will return -1. - default value is -1
+  fromIndex Optional :An integer representing the index at which to start the search. Defaults to 0
+- Return: The index of the first occurrence of searchValue, or -1 if not found
+- Example:
+
+  ```Js
+  const searchTerm = 'dog';
+  console.log(searchTerm.indexOf("G"));//-1
+  console.log(searchTerm.indexOf("g"));//2
+  const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+  console.log(paragraph.indexOf("jumps"));//20
+
+  ```
+- `indexOf` search a string and resturn the first position of searched string from main staring. if it is not matched it will return -1
+
 11. `lastIndexOf`
+- Parameter:
+  searchValue: A string representing the value to search for. If searchValue is an empty string, then fromIndex is returned.
+  fromIndex Optional :The index of the last character in the string to be considered as the beginning of a match
+- Return: The index of the last occurrence of searchValue; -1 if not found.
+- Example:
+
+  ```Js
+  const searchTerm = 'dog';
+  console.log(searchTerm.lastIndexOf("G"));//-1
+  const paragraph = 'The quick brown fox jumps over the lazy dog. If the dog barked, was it really lazy?';
+  console.log(paragraph.lastIndexOf("y"));//81
+  console.log(paragraph.lastIndexOf("dog"));//52
+
+  ```
+- `indexOf` search a string and resturn the last occurance position of searched string from main staring. if it is not matched it will return -1  
 12. `padEnd`
+- Parameter:
+  targetLength: string will be padded by targetlength in the end. By default it will take " "(empty space)
+  padString - Optional :string can be passed and it will be padded instead of empty space
+- Return: A String of the specified targetLength with the padString applied at the end of the current str.
+- Example:
+
+  ```Js
+  const str1 = 'Breaded Mushrooms';
+  console.log(str1.padEnd(25, '.'));//"Breaded Mushrooms........"
+  const str2 = '200';
+  console.log(str2.padEnd(5));//"200  "
+  let str = "Hello"
+  console.log(str.padEnd(5,"!"));//"Hello!!!!!"
+
+  ```
+- `padEnd` accept target length and padstring as parameter. it will pad padstring in the end of string by target length times  
 13. `padStart`
+- Parameter:
+  targetLength: string will be padded by targetlength in the begining. By default it will take " "(empty space)
+  padString - Optional :string can be passed and it will be padded instead of empty space
+- Return: A String of the specified targetLength with the padString applied at the begining of the current str.
+- Example:
+
+  ```Js
+  const str1 = 'Breaded Mushrooms';
+  console.log(str1.padStart(25, '.'));//"........Breaded Mushrooms"
+  const str2 = '200';
+  console.log(str2.padStart(5));//"  200"
+  let str = "Hello"
+  console.log(str.padStart(5,"!"));//"!!!!!Hello"
+
+  ```
+- `padStart` accept target length and padstring as parameter. it will pad padstring in the begining of string by target length times    
 14. `repeat`
+- Parameter: (count) integer between 0 and +Infinity, indicating the number of times to repeat the string - (string data type)
+- Return: A new string containing the specified number of copies of the given string.
+- Example:
+
+  ```Js
+  const chorus = 'Because I\'m happy. ';
+  console.log(chorus.repeat(3));"Because I'm happy. Because I'm happy. Because I'm happy. "
+  const str2 = 'World';
+  console.log(str1.repeat(2)); //'WorldWorld'
+  
+
+  ```
+- `repeat` accept integer as parameter and return repeated string as result  
 15. `replace`
+- Parameter: 
+         regexp (pattern):A RegExp object or literal. The match or matches are replaced with newSubstr or the value returned by the specified function.
+         substr : A String that is to be replaced by newSubstr
+         newSubstr (replacement): The String that replaces the substring specified by the specified regexp or substr parameter
+         function (replacement): A function to be invoked to create the new substring to be used to replace the matches to the given regexp or substr.
+- Return: A new string, with some or all matches of a pattern replaced by a replacement.
+- Example:
+
+  ```Js
+  const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+  console.log(p.replace("fox","Lion"));//"The quick brown Lion jumps over the lazy dog. If the dog reacted, was it really lazy?"
+  const greet = "good morning"
+  console.log(greet.replace("morning","evening"));//"good evening"
+  const greet = "good morning"
+  console.log(greet.replace("Good","hello"));//"good morning"
+  
+  console.log(str1.repeat(2)); //'WorldWorld'
+  
+
+  ```
+- `repeat` accept two string in parameter. It will replace the string with other string as return as output
 16. `slice`
+- Parameter: 
+         beginIndex : The zero-based index at which to begin extraction - by default take 0
+         endIndex Optional : The zero-based index before which to end extraction. The character at this index will not be included.
+- Return: A new string containing the extracted section of the string.
+- Example:
+
+  ```Js
+   const str = 'The quick brown fox jumps over the lazy dog.';
+   console.log(str.slice(31));// "the lazy dog."
+   console.log(str.slice(-2));//"g"
+   console.log(str.slice(-9, -5));//"lazy"
+  ```
+- `repeat` accept two number as parameter. it will exclude the string from 0th index to number till provided.
+
 17. `split`
+- Parameter:
+      separator Optional : The pattern describing where each split should occur
+      limit Optional : A non-negative integer specifying a limit on the number of substrings to be included in the array
+- Return: An Array of strings, split at each point where the separator occurs in the given string.
+- Example:
+
+  ```Js
+  const chorus = 'Because I\'m happy. ';
+  console.log(chorus.repeat(3));"Because I'm happy. Because I'm happy. Because I'm happy. "
+  const str2 = 'World';
+  console.log(str1.repeat(2)); //'WorldWorld'
+  
+
+  ```
+- `repeat` accept integer as parameter and return repeated string as result
 18. `substring`
+
+- Parameter:
+      indexStart : The index of the first character to include in the returned substring.
+     indexEnd Optional : The index of the first character to exclude from the returned substring.
+- Return: A new string containing the specified part of the given string.
+- Example:
+
+  ```Js
+  const str = 'Mozilla';
+  console.log(str.substring(1));//"ozilla"
+  console.log(str.substring(2));//"zilla"
+  console.log(str.substring(0,2));//"Mo"
+  
+
+  ```
+- `repeat` accept integer as parameter and return repeated string as result
 
 ```
 
