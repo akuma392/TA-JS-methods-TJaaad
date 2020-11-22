@@ -10,8 +10,8 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-![](./img/main.png)
 
+![](./img/prob1.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -20,6 +20,8 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
+
+![](./img/prob2.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -29,6 +31,8 @@ function double(num) {
 let doubleNum = numbers.forEach(double);
 ```
 
+![](./img/prob3.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -37,6 +41,8 @@ function double(num) {
 let doubleNumbers = numbers.map(double);
 ```
 
+![](./img/prob4.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -44,6 +50,8 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+
+![](./img/prob5.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
