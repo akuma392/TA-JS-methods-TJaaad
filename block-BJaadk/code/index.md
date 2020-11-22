@@ -61,6 +61,8 @@ function addTwo(num) {
 let doubleNumbers = numbers.map(addTwo);
 ```
 
+![](./img/prob6.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
@@ -68,6 +70,8 @@ function addTwo(num) {
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
+
+![](./img/prob7.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -77,6 +81,8 @@ function isOdd(num) {
 let oddNumbers = numbers.filter(isOdd);
 ```
 
+![](./img/prob8.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function test(num) {
@@ -84,6 +90,8 @@ function test(num) {
 }
 let filteredNumbers = numbers.filter(test);
 ```
+
+![](./img/prob9.png)
 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
@@ -93,6 +101,8 @@ function test(num) {
 let filteredNumbers = numbers.filter(test);
 ```
 
+![](./img/prob10.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -101,6 +111,8 @@ function add(accumulator, currentValue) {
 let sum = numbers.reduce(add);
 ```
 
+![](./img/prob11.png)
+
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function add(accumulator, currentValue) {
@@ -108,3 +120,5 @@ function add(accumulator, currentValue) {
 }
 let sum = numbers.reduce(add);
 ```
+
+![](./img/prob12.png)
