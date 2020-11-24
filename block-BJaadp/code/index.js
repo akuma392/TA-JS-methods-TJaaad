@@ -113,21 +113,17 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-let bananaArr = fruitBasket.filter((str) => str == "banana");
-let appleArr = fruitBasket.filter((str) => str == "apple");
-let cherryArr = fruitBasket.filter((str) => str == "cherry");
-let orangeArr = fruitBasket.filter((str) => str == "orange");
-let figArr = fruitBasket.filter((str) => str == "fig");
+let fruitObj = fruitBasket.reduce((acc, cv) => {
+  if (acc[cv]) {
+    acc[cv] = acc[cv] + 1;
+  } else {
+    acc[cv] = 1;
+  }
 
-let fruitsObj = {
-  banana: bananaArr.length,
-  apple: appleArr.length,
-  cherry: cherryArr.length,
-  orange: orangeArr.length,
-  fig: figArr.length,
-};
+  return acc;
+}, {});
 
-console.log(fruitsObj);
+console.log(fruitObj);
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -137,6 +133,11 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
+let fruitsArray = Object.keys(fruitObj).reduce((acc, cv) => {
+  acc = acc.concat([[cv, fruitObj[cv]]]);
+  return acc;
+}, []);
+console.log(fruitsArray);
 
 const data = [
   [1, 2, 3],
@@ -147,7 +148,7 @@ const data = [
 
 // Using reduce flat data array
 
-let dataArr = data.reduce((acc, cum) => acc.concat(cum));
+let dataArr = data.reduce((acc, cv) => acc.concat(cv));
 
 console.log(dataArr);
 
@@ -159,7 +160,7 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-console.log(dataTwo.flat(Infinity));
+let dataArr = data.reduce((acc, cv) => acc.concat(cv.flat(Infinity)));
 
 /*
 
@@ -211,10 +212,11 @@ function triple(num) {
   return (num = num * 3);
 }
 
-function reducer(acc, cum) {
-  return cum(acc);
+function reducer(acc, cv) {
+  acc = cv(acc);
+  return acc;
 }
-// console.log(pipeline.reduce((acc, cum) => cum(acc), 3));
+// console.log(pipeline.reduce((acc, cv) => cv(acc), 3));
 
 console.log(pipeline.reduce(reducer, 3));
 
