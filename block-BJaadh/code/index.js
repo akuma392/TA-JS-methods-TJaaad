@@ -113,6 +113,15 @@ console.log(strings.splice(3, 2));
 
 // - Replace 12 & 18 with 1221 and 1881
 
+console.log(numbers.map((num)=>{
+  if(num === 12){
+    return 1221;}
+  else if(num ===18){
+    return 1881;
+  }
+  else{
+    return num;}))
+
 // - Replace words in strings array with the length of the word
 
 let strLength = strings.map((str) => str.length);
