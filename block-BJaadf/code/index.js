@@ -53,9 +53,16 @@ fruits.forEach((num) => console.log(num));
 
 // Convert each fruit name to lowercase and log it
 
+console.log(fruits.join(" ").toLowerCase().split(" "));
+
 // Convert all fruits name into lowercase and store in new array named lowercaseFruits
+let lowercaseFruits = fruits.join(" ").toLowerCase().split(" ");
+
+console.log(lowercaseFruits);
 
 // Convert all fruits name into uppercase and store in new array named uppercaseFruits
+let uppercaseFruits = fruits.join(" ").toUpperCase().split(" ");
+console.log(uppercaseFruits);
 
 let numbers = [1, 2, [3, 4]];
 let numbersTwo = [1, 2, [3, 4, [5, 6]]];
